@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produit index{% endblock %}
+
+{% block body %}
+    <div class="row">
+
+        {% for produit in product %}
+
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="{{ produit.libelle }}"
+                             class="center" alt="" width="60%">
+                        <div class="row">&nbsp;</div>
+                        <p class="text-left">
+                            {{ produit.description }}
+                        </p>
+                        <p class="text-left">
+                            {{ produit.prixht }}
+                        </p>
+                        <button class="btn btn-success"><i class="fas fa-shopping-basket"></i></button>
+                    </div>
+                </div>
+                <div class="row">&nbsp;</div>
+            </div>
+
+
+        {% endfor %}
+
+    </div>
+
+{% endblock %}
